@@ -990,7 +990,7 @@
 
 <p><a href="https://melpa.org/#/lsp-java"><img alt="MELPA" src="https://melpa.org/packages/lsp-java-badge.svg" /></a>
 <a href="https://stable.melpa.org/#/lsp-java"><img alt="MELPA Stable" src="https://stable.melpa.org/packages/lsp-java-badge.svg" /></a>
-<a href="https://github.com/emacs-lsp/lsp-java/actions"><img alt="Build Status" src="https://github.com/emacs-lsp/lsp-java/workflows/CI/badge.svg?branch=master" /></a>
+<a href="https://github.com/emacs-lsp/lsp-java/actions/workflows/test.yml"><img alt="CI" src="https://github.com/emacs-lsp/lsp-java/actions/workflows/test.yml/badge.svg" /></a>
 <a href="https://gitter.im/emacs-lsp/lsp-mode?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/emacs-lsp/lsp-mode" src="https://badges.gitter.im/emacs-lsp/lsp-mode.svg" /></a></p>
 <h1 id="lsp-java">lsp-java<a class="headerlink" href="#lsp-java" title="Permanent link">#</a></h1>
 <p>Emacs Java IDE using <a href="https://projects.eclipse.org/projects/eclipse.jdt.ls">Eclipse JDT Language Server</a>.</p>
@@ -1249,6 +1249,8 @@ Use http://download.eclipse.org/che/che-ls-jdt/snapshots/che-jdt-language-server
 <li><code>lsp-java-code-generation-to-string-list-array-contents</code> - List contents of arrays instead of using native toString().</li>
 <li><code>lsp-java-code-generation-to-string-limit-elements</code> - Limit number of items in arrays/collections/maps to list, if 0 then list all.</li>
 <li><code>lsp-java-inhibit-message</code> - If non-nil, inhibit java messages echo via `inhibit-message'.</li>
+<li><code>lsp-java-sources-organize-imports-star-threshold</code> - Specifies the number of imports added before a star-import declaration is used.</li>
+<li><code>lsp-java-sources-organize-imports-static-star-threshold</code> - Specifies the number of static imports added before a star-import declaration is used.</li>
 </ul>
 <h2 id="additional-packages">Additional packages<a class="headerlink" href="#additional-packages" title="Permanent link">#</a></h2>
 <ul>
@@ -1288,13 +1290,18 @@ LSP slowness could be caused by slow JDT server, especially on large JAVA projec
 <div class="highlight"><pre><span></span><code><span class="c1">;; current VSCode defaults</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">lsp-java-vmargs</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;-XX:+UseParallelGC&quot;</span> <span class="s">&quot;-XX:GCTimeRatio=4&quot;</span> <span class="s">&quot;-XX:AdaptiveSizePolicyWeight=90&quot;</span> <span class="s">&quot;-Dsun.zip.disableMemoryMapping=true&quot;</span> <span class="s">&quot;-Xmx2G&quot;</span> <span class="s">&quot;-Xms100m&quot;</span><span class="p">))</span>
 </code></pre></div>
+<ul>
+<li>I have configured everything in VSCode and saved the code workspace there, can import it?</li>
+</ul>
+<p>Yes, the command <code>lsp-java-load-vscode-workspace</code> allows you to load a code-workspace file created in VScode.
+It will also import the Java runtime and Debug launch configurations from the VSCode settings.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2025</span>
       
     
   </small>
